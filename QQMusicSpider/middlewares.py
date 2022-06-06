@@ -97,7 +97,8 @@ class QQmusicspiderDownloaderMiddleware(object):
         return s
 
     def process_request(self, request, spider):
-        resp = requests.get("http://127.0.0.1:5555/random")
+        # resp = requests.get("http://127.0.0.1:5555/random")
+        resp = requests.get("http://110.42.150.233:5555/random")
         request.meta['proxy'] = "http://" + resp.text
 
     def process_response(self, request, response, spider):

@@ -7,6 +7,7 @@
 
 from scrapy import signals
 import random
+import requests
 
 
 class MyUseragent(object):
@@ -83,7 +84,7 @@ class QqmusicspiderSpiderMiddleware(object):
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
-class QqmusicspiderDownloaderMiddleware(object):
+class QQmusicspiderDownloaderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
@@ -96,16 +97,8 @@ class QqmusicspiderDownloaderMiddleware(object):
         return s
 
     def process_request(self, request, spider):
-        # Called for each request that goes through the downloader
-        # middleware.
-
-        # Must either:
-        # - return None: continue processing this request
-        # - or return a Response object
-        # - or return a Request object
-        # - or raise IgnoreRequest: process_exception() methods of
-        #   installed downloader middleware will be called
-        return None
+        resp = requests.get("http://127.0.0.1:5555/random")
+        request.meta['proxy'] = "http://" + resp.text
 
     def process_response(self, request, response, spider):
         # Called with the response returned from the downloader.

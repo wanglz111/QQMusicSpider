@@ -65,10 +65,11 @@ ROBOTSTXT_OBEY = False
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'QQMusicSpider.middlewares.QqmusicspiderDownloaderMiddleware': 543,
+#    'QQMusicSpider.middlewares.QQmusicspiderDownloaderMiddleware': 544,
 # }
 DOWNLOADER_MIDDLEWARES = {
     'QQMusicSpider.middlewares.MyUseragent': 543,
+    'QQMusicSpider.middlewares.QQmusicspiderDownloaderMiddleware': 544
 }
 
 # Enable or disable extensions
@@ -84,7 +85,7 @@ DOWNLOADER_MIDDLEWARES = {
 # }
 ITEM_PIPELINES = {
     'QQMusicSpider.pipelines.DuplicatesPipeline': 300,
-    'QQMusicSpider.pipelines.QqmusicspiderPipeline': 800,
+    'QQMusicSpider.pipelines.MysqlPipeline': 800,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

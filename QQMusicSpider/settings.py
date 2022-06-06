@@ -69,7 +69,7 @@ ROBOTSTXT_OBEY = False
 # }
 DOWNLOADER_MIDDLEWARES = {
     'QQMusicSpider.middlewares.MyUseragent': 543,
-    'QQMusicSpider.middlewares.QQmusicspiderDownloaderMiddleware': 544
+    # 'QQMusicSpider.middlewares.QQmusicspiderDownloaderMiddleware': 544
 }
 
 # Enable or disable extensions

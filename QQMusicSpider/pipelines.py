@@ -49,7 +49,7 @@ class MysqlPipeline(object):
 
     def __init__(self):
         # 建立连接
-        self.conn = pymysql.connect(host='localhost', user='root', password='12345678', db='qqmusic', port=3306,
+        self.conn = pymysql.connect(host='localhost', user='root', password='123456', db='qqmusic', port=3306,
                                     charset='utf8')  # 有中文要存入数据库的话要加charset='utf8'
         # 创建游标
         self.cursor = self.conn.cursor()
